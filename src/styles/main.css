@@ -38,6 +38,7 @@ body {
     .header {
         min-height: 56px;
         transition: min-height 0.3s;
+        /* background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b); */
     }
     .header_inner {
         width: 100%;
@@ -128,14 +129,16 @@ body {
         main {
             width: 100%;
             margin: 0 auto;
-            background-color: azure;
+            background-color: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+            background-repeat: no-repeat;
             display:block;
         }
 
         .container {
             margin: 1.3em 10%;
             padding: 1em;
-            background-color: azure;
+            background-color: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+            background-repeat: no-repeat;
         }
 
         .title-container {
@@ -143,8 +146,8 @@ body {
         }
         #list-rest {
             display: grid;
-            /* grid-template-columns:  1fr 1fr;
-            grid-gap: 1.545em; */
+            /* grid-template-columns:  1fr 1fr; */
+            grid-gap: 1.545em;
             background-color: azure;
         }
 
@@ -170,7 +173,7 @@ body {
             color: white;
             font-size: large;
             padding: 1em;
-            background-color: #000000a8;
+            background: -webkit-linear-gradient(bottom, #666565, #bdc7c7);
             width: 100%;
             z-index: 1;
         }
@@ -250,7 +253,7 @@ body {
 
     /* //responsive  */
 
-    @media screen and (max-width: 499px) {
+    @media screen and (max-width: 599px) {
         .nav {
             z-index: 10;
             background-color: #fff;
@@ -298,9 +301,7 @@ body {
     /* // min width  */
 
     @media screen and (min-width: 500px) {
-        .header_menu {
-            display:none;
-        }
+        
     }
     @media screen and (min-width:600px){
         #list-rest {
@@ -308,16 +309,25 @@ body {
             grid-template-columns: 1fr 1fr;
             grid-gap: 1.545em;
         }
+        .header_menu {
+            display:none;
+        }
     }
     @media screen and (min-width: 800px){
         .nav_list {
             max-width: 800px;
             margin: 0 auto;
         }
+       
     }
 
     @media screen and (min-width: 1200px){
         main {
             max-width: 1200px;
+        }
+        #list-rest {
+            display:grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 1.545em;
         }
     }

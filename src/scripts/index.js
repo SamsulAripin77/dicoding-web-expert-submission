@@ -29,7 +29,7 @@ function createListItem(data){
             <div class="card">
             <a href="#">
                 <div class="img-container">
-                    <img src="${element.pictureId}" alt="Image Menu" class="img-res lazyloaded">
+                    <img src="${element.pictureId}" alt="Menu ${element.name}" class="img-res lazyloaded">
                     <span class="card-title">
                         <p>${element.name} - ${element.city}</p>
                     </span>

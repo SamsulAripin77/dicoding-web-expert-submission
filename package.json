@@ -36,7 +36,6 @@
     "whatwg-fetch": "^3.2.0"
   },
   "dependencies": {
-    "fs": "^0.0.1-security",
     "regenerator-runtime": "^0.13.5"
   }
 }
