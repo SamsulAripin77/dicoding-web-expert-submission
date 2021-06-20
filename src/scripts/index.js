@@ -2,30 +2,28 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import json from '../DATA.json';
 
+const menu = document.querySelector('#menu');
+const hero = document.querySelector('#hero');
+const main = document.querySelector('main');
+const drawer = document.querySelector('#drawer');
 
+menu.addEventListener('click', (event) => {
+  drawer.classList.toggle('open');
+  event.stopPropagation();
+});
 
-const menu = document.querySelector('#menu')
-const hero = document.querySelector('#hero')
-const main = document.querySelector('main')
-const drawer = document.querySelector('#drawer')
+hero.addEventListener('click', () => {
+  drawer.classList.remove('open');
+});
 
-menu.addEventListener('click', function(event){
-    drawer.classList.toggle('open')
-    event.stopPropagation()
-})
+main.addEventListener('click', () => {
+  drawer.classList.remove('open');
+});
 
-hero.addEventListener('click',function(){
-    drawer.classList.remove('open')
-})
-
-main.addEventListener('click',function(){
-    drawer.classList.remove('open')
-})
-
-function createListItem(data){
-    let listContainer = document.querySelector('#list-rest')
-    data.restaurants.forEach(element => {
-        listContainer.innerHTML +=`
+function createListItem(data) {
+  const listContainer = document.querySelector('#list-rest');
+  data.restaurants.forEach((element) => {
+    listContainer.innerHTML += `
             <div class="card">
             <a href="#">
                 <div class="img-container">
@@ -46,8 +44,8 @@ function createListItem(data){
                 </div>
             </a>
             </div>
-        `
-    })    
+        `;
+  });
 }
 
-createListItem(json)
+createListItem(json);
