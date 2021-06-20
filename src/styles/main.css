@@ -54,10 +54,17 @@ body {
         color: #212121;
     }
     .header_menu {
-        font-size: 32px;
+        font-size: 44px;
         margin: 10px auto;
         display: block;
-        width: 30px;
+        width: 44px;
+        color:#000000;
+    }
+    .header_menu:link {
+        text-decoration: none;
+    }
+    .heder_menu:hover {
+        text-decoration: none;
     }
 /* /header */
     .nav {
