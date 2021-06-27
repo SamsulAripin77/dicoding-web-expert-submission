@@ -1,3 +1,5 @@
+import RestaurantDbSource from "../../data/restaurant-source";
+
 const Menus = {
   async render() {
     return `
@@ -6,7 +8,8 @@ const Menus = {
   },
 
   async afterRender() {
-
+    const menus = await RestaurantDbSource.listMenus();
+    console.log(menus);
   },
 };
 
