@@ -2,22 +2,12 @@ import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
 import json from '../DATA.json';
 
-const menu = document.querySelector('#menu');
-const hero = document.querySelector('#hero');
-const main = document.querySelector('main');
-const drawer = document.querySelector('#drawer');
+import App from './views/app';
 
-menu.addEventListener('click', (event) => {
-  drawer.classList.toggle('open');
-  event.stopPropagation();
-});
-
-hero.addEventListener('click', () => {
-  drawer.classList.remove('open');
-});
-
-main.addEventListener('click', () => {
-  drawer.classList.remove('open');
+const app = new App({
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
 });
 
 function createListItem(data) {
