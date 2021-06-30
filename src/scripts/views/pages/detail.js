@@ -7,8 +7,9 @@ import { createMenusDetailTemplate } from '../../templates/template-creator';
 const Detail = {
   async render() {
     return `
-        <div id="menus" class="menus"></div>
-      
+        <div id="menus" class="menu">
+        
+        </div>
         `;
   },
 
