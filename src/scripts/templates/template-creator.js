@@ -1,8 +1,8 @@
 import CONFIG from '../globals/config';
 
 const createMenusDetailTemplate = (menu) => `
-    <h2 class="menu_name">${menu.name}</h2> // css : movie.title
-    <p class="menu_deskription">${menu.description}</p> //css : movie.overview
+    <h2 class="menu_name">${menu.name}</h2> 
+    <p class="menu_deskription">${menu.description}</p>
     <span>${menu.city}</span>
     <small>${menu.rating}</small>
 `
