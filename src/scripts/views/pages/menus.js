@@ -4,21 +4,21 @@ import { createMenuItemTemplate } from "../../templates/template-creator";
 const Menus = {
   async render() {
     return `
-    <div class="content">
+    <section class="content">
     <h2 class="content__heading">List Menu</h2>
-    <div id="menus" class="menus">
+    <div id="list-rest" class="menus">
 
     </div>
-  </div>
-        `;
+  </section>
+  `;
   },
 
   async afterRender() {
     const menus = await RestaurantDbSource.listMenus();
     console.log(menus);
-    const menuContainer = document.querySelector('#menus');
-    menus.forEach((menu) =>{
-        menuContainer.innerHTML += createMenuItemTemplate(menu);
+    const menuContainer = document.querySelector('#list-rest');
+    menus.forEach((menu) => {
+      menuContainer.innerHTML += createMenuItemTemplate(menu);
     })
   },
 };

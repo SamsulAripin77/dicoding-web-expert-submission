@@ -151,6 +151,15 @@ body {
         .title-container {
             margin-bottom: 1.545em;
         }
+
+        section.content {
+            padding: 30px;
+        }
+
+        .content__heading {
+            padding-bottom: 20px;
+        }
+
         #list-rest {
             display: grid;
             /* grid-template-columns:  1fr 1fr; */
