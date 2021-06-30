@@ -9,7 +9,7 @@ const createMenusDetailTemplate = (menu) => `
 
 const createMenuItemTemplate = (menu) => `
 <div class="card">
-<a href="#">
+<a href="${`/#/detail/${menu.id}`}">
     <div class="img-container">
         <img src="${CONFIG.IMAGE_URL}/small/${menu.pictureId}" alt="Menu ${menu.name}" class="img-res lazyloaded">
         <span class="card-title">
@@ -30,4 +30,4 @@ const createMenuItemTemplate = (menu) => `
 </div>
 `
 
-export {createMenuItemTemplate, createMenusDetailTemplate};
+export { createMenuItemTemplate, createMenusDetailTemplate };
