@@ -59,10 +59,16 @@ const createMenusDetailTemplate = (menu) => {
                     <td>:</td>
                     <td>${menu.city}</td>
                 </tr>
+                <tr>
+                    <td>Rating</td>
+                    <td>:</td>
+                    <td>${menu.rating}</td>
+                </tr>
             </table>
             <br>
             <p class="menu_deskription">${menu.description}</p>
     </div>
+    <h3 class="title-review">Reviews</h3>
     <div class="detail-review grid-3">
         ${review}
     </div>
