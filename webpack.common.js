@@ -35,9 +35,6 @@ module.exports = {
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
     }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
-    }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -45,6 +42,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/scripts/sw.js'),
     }),
   ],
 };
