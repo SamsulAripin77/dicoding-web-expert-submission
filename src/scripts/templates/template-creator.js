@@ -28,12 +28,12 @@ const createMenusDetailTemplate = (menu) => {
                 <tr>
                    <td>
                         <ul style="none">
-                            ${foods}
+                            ${foods.join('')}
                         </ul>
                    </td>
                    <td>
                         <ul style="none">
-                            ${drinks}
+                            ${drinks.join('')}
                         </ul>
                     </td>
                 </tr>
@@ -69,7 +69,7 @@ const createMenusDetailTemplate = (menu) => {
     </div>
     <h3 class="title-review">Reviews</h3>
     <div class="detail-review grid-3">
-        ${reviews}
+        ${reviews.join('')}
     </div>
 `;
 };
