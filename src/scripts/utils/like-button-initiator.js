@@ -1,5 +1,5 @@
 import FavoriteRestaurantIdb from "../data/favoriterestaurant-idb";
-import { createLikedButtonTemplate } from "../templates/template-creator";
+import { createLikedButtonTemplate, createLikeButtonTemplate } from "../templates/template-creator";
 
 const LikeButtonInitiator = {
     async init({ likeButtonContainer, restaurant }) {

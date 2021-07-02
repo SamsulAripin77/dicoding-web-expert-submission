@@ -3,7 +3,7 @@ const CONFIG = {
   BASE_URL: 'https://restaurant-api.dicoding.dev',
   IMAGE_URL: 'https://restaurant-api.dicoding.dev/images',
   CACHE_NAME: new Date().toISOString(),
-  DATABASE_NAME: 'restaurant-database',
+  DATABASE_NAME: 'restaurantdatabase',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurants',
 };
