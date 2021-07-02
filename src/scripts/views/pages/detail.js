@@ -3,7 +3,6 @@ import RestaurantDbSource from '../../data/restaurant-source';
 import { createMenusDetailTemplate } from '../../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 
-
 const Detail = {
   async render() {
     return `
@@ -24,7 +23,7 @@ const Detail = {
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
       restaurant,
-    })
+    });
   },
 };
 

@@ -1,24 +1,23 @@
 import CONFIG from '../globals/config';
 
 const createMenusDetailTemplate = (menu) => {
-    let foo = '';
-    let drin = '';
-    let review = '';
-    let foods = menu.menus.foods.map((food) => foo += `<li> ${food.name}</li>`)
-    let drinks = menu.menus.drinks.map((drink) => drin += `<li>${drink.name}</li>`)
+  const foods = menu.menus.foods.map((food) => `<li> ${food.name}</li>`);
 
+  const drinks = menu.menus.drinks.map((drink) => `<li>${drink.name}</li>`);
 
-    let reviews = menu.customerReviews.map((rev) => review += `<div class="detail-review-item">
-                                                                    <div class="review-header">
-                                                                        <p class="review-name"><i title="restaurant" class="fa fa-user-circle" style="font-size:1.3em;"></i>&nbsp;Ahmad</p>
-                                                                        <p class="review-date">13 November 2019</p>
-                                                                    </div>
-                                                                    <div class="review-body">
-                                                                        Tidak rekomendasi untuk pelajar!
-                                                                    </div>
-                                                                  </div>`)
+  const reviews = menu.customerReviews.map((rev) => `<div class="detail-review-item">
+                                                        <div class="review-header">
+                                                            <p class="review-name">
+                                                                <i title="restaurant" class="fa fa-user-circle" style="font-size:1.3em;"></i>
+                                                                &nbsp; ${rev.name}</p>
+                                                            <p class="review-date">${rev.date}</p>
+                                                        </div>
+                                                        <div class="review-body">
+                                                            ${rev.review}
+                                                        </div>
+                                                    </div>`);
 
-    return `
+  return `
     <img class="menu_postar img-res lazyloaded" src="${CONFIG.IMAGE_URL}/small/${menu.pictureId}" alt="Menu ${menu.name}" >
     <div class="menu_info">
         <table id="list-menu">
@@ -29,12 +28,12 @@ const createMenusDetailTemplate = (menu) => {
                 <tr>
                    <td>
                         <ul style="none">
-                            ${foo}
+                            ${foods}
                         </ul>
                    </td>
                    <td>
                         <ul style="none">
-                            ${drin}
+                            ${drinks}
                         </ul>
                     </td>
                 </tr>
@@ -70,9 +69,10 @@ const createMenusDetailTemplate = (menu) => {
     </div>
     <h3 class="title-review">Reviews</h3>
     <div class="detail-review grid-3">
-        ${review}
+        ${reviews}
     </div>
-`}
+`;
+};
 
 const createMenuItemTemplate = (menu) => `
     <div class="card" >
@@ -95,7 +95,7 @@ const createMenuItemTemplate = (menu) => `
                 </div>
 </a>
 </div>
-`
+`;
 
 const createLikeButtonTemplate = () => `
   <button aria-label="like this movie" id="likeButton" class="like">
@@ -109,11 +109,9 @@ const createLikedButtonTemplate = () => `
   </button>
 `;
 
-
-
 export {
-    createMenuItemTemplate,
-    createMenusDetailTemplate,
-    createLikeButtonTemplate,
-    createLikedButtonTemplate
+  createMenuItemTemplate,
+  createMenusDetailTemplate,
+  createLikeButtonTemplate,
+  createLikedButtonTemplate,
 };

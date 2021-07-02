@@ -19,5 +19,4 @@ window.addEventListener('load', () => {
   swRegister();
 });
 
-
 // createListItem(json);

@@ -1,5 +1,5 @@
-import RestaurantDbSource from "../../data/restaurant-source";
-import { createMenuItemTemplate } from "../../templates/template-creator";
+import RestaurantDbSource from '../../data/restaurant-source';
+import { createMenuItemTemplate } from '../../templates/template-creator';
 
 const Menus = {
   async render() {
@@ -15,11 +15,10 @@ const Menus = {
 
   async afterRender() {
     const menus = await RestaurantDbSource.listMenus();
-    console.log(menus);
     const menuContainer = document.querySelector('#list-rest');
     menus.forEach((menu) => {
       menuContainer.innerHTML += createMenuItemTemplate(menu);
-    })
+    });
   },
 };
 
