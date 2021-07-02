@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/url-parser';
 import RestaurantDbSource from '../../data/restaurant-source';
 import { createMenusDetailTemplate } from '../../templates/template-creator';
-
+import LikeButtonInitiator from '../../utils/like-button-initiator';
 
 
 const Detail = {
@@ -10,15 +10,21 @@ const Detail = {
         <div id="menus" class="menu">
         
         </div>
+        <div id="likeButtonContainer"></div>
         `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveWithoutCombiner();
-    const menu = await RestaurantDbSource.detailMenus(url.id);
+    const restaurant = await RestaurantDbSource.detailMenus(url.id);
 
     const menuContainer = document.querySelector('#menus');
-    menuContainer.innerHTML = createMenusDetailTemplate(menu);
+    menuContainer.innerHTML = createMenusDetailTemplate(restaurant);
+
+    LikeButtonInitiator.init({
+      likeButtonContainer: document.querySelector('#likeButtonContainer'),
+      restaurant,
+    })
   },
 };
 
